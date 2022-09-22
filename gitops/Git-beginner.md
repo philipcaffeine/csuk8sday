@@ -69,9 +69,6 @@ View log from current git history
 git log
 ```
 
-commit 1d9c8fcc1764540646b4058ce39332fb14a3815c (HEAD -> main, origin/main)
-Author: Philip Chen <yec@microsoft.com>
-Date:   Thu Sep 22 14:27:48 2022 +0800
 
 ## Create a new branch 
 
@@ -132,19 +129,14 @@ Merge hotfix branch to main
 git merge hotfix       
 ```
 
-PS C:\Users\yec\OneDrive\dev_cloud\vs_code\_common_iot\14-kubernetes\testgit> git merge hotfix
-Updating 8541726..074b542
-Fast-forward
- share-file.txt | Bin 72 -> 134 bytes
- 1 file changed, 0 insertions(+), 0 deletions(-)
 
 Delete hotfix branch 
 ```hcl
 git branch -d hotfix       
 ```
 
-Now, let's merge that new-branch into main
-Switch back to main, to merge merge new-branch
+Now, let's merge that new-branch into main. Switch back to main, to merge merge new-branch
+
 ```hcl
 git branch  
 ```
