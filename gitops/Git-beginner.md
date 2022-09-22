@@ -28,14 +28,38 @@ In your command line, or terminal in VS Code, do the following:
 
 ```hcl
 mkdir testgitrepo
-cd testgitrepo
-echo "My first repository." > README.md
-git init
-git add README.md       # this is the "staging"
-git commit -m "initial"      # this commits all staged files only, with a commit message
-cd .. # go back to root folder
-
 ```
+```hcl
+cd testgitrepo
+```
+```hcl
+echo "# testgitrepo" >> README.md
+```
+```hcl
+git init
+```
+```hcl
+git add README.md
+```
+```hcl
+git commit -m "first commit"
+```
+```hcl
+git branch -M main
+```
+```hcl
+git remote add origin https://github.com/philipcaffeine/testgitrepo.git
+```
+```hcl
+git push -u origin main
+```
+
+## Connect to GitHub
+
+Connect it to github
+
+git remote add origin philipcaffeine@github.com:philipcaffeine/testgitrepo
+git push -u origin master
 
 ## Clone existing repo 
 
