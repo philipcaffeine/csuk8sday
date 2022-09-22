@@ -15,7 +15,7 @@ But first, tell Git who you are with:
 
 ```hcl
 git config --global user.name "Philip Chen"
-git config --global user.email yec@microsoft.com
+git config --global user.email yourname@abc.com
 ```
 
 ## Create files, repo, staged, and commit the files to your repo
