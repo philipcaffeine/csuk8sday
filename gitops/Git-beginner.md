@@ -33,12 +33,19 @@ echo "My first repository." > README.md
 git init
 git add README.md       # this is the "staging"
 git commit -m "initial"      # this commits all staged files only, with a commit message
-cd .. # get to where we were
+cd .. # go back to root folder
 
 ```
 
+## Clone existing repo 
 
-### Cloud quickstart
+
+```hcl
+git clone https://
+git log
+```
+
+## Cloud quickstart
 
 - 6GB unused RAM
 - [**Microsoft Azure Cloud** (`azure`)](./rancher/azure)
