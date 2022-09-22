@@ -30,13 +30,13 @@ If you want to connect local repo to Github, folow the following.
 Then, go back to your command line, or terminal in VS Code, do the following: 
 
 ```hcl
-mkdir testgitrepo
+mkdir testgit
 ```
 ```hcl
-cd testgitrepo
+cd testgit
 ```
 ```hcl
-echo "# testgitrepo" >> README.md  # create initial file 
+echo "# Creating testgit" >> README.md  # create initial file 
 ```
 ```hcl
 git init  
@@ -51,7 +51,7 @@ git commit -m "first commit"   # commit the file into repo
 git branch -M main   
 ```
 ```hcl
-git remote add origin https://github.com/philipcaffeine/testgitrepo.git
+git remote add origin https://github.com/philipcaffeine/testgit.git
 ```
 ```hcl
 git push -u origin main
@@ -70,56 +70,89 @@ Date:   Thu Sep 22 14:27:48 2022 +0800
 
 ## Create a new branch 
 
+### Create a new branch 
+
 ```hcl
-git branch # see, we're in master now
-
+git branch   # see, we're in main branch now
+```
+```hcl
 git checkout -b new-branch
-
-git branch
-
+```
+```hcl
+git branch      # check current branch
+```
+```hcl
 echo "Editing by author of [new-branch]" >> share-file.txt
-
+```
+```hcl
 git commit -a -m "Commit change on a dev new-branch"
-
-git checkout master # go back to master
-
-
-git checkout -b hotfix
-
-echo "Editing by author of [hotfix]" >> share-file.txt
-
-git commit -a -m "Commit change by [hotfix]"
-
-
-git log --graph --all
-
-git checkout master
-
-git merge hotfix
-
-Updating f42c576..3a0874c
-Fast-forward
- index.html | 2 ++
- 1 file changed, 2 insertions(+)
-
-
+```
+```hcl
+git add share-file.txt   # this is the staged of the file
+```
+```hcl
+git checkout main       # go back to main
 ```
 
-Now, let's merge that new-branch into master:
+### Check out another new branch, Hotfix, and merge to main
 
-git branch # make sure you're in the branch you want to merge the other into. git merge new-branch
 
-cat test.txt
+```hcl
+git checkout -b hotfix  # create and checkout another new hotfix branch
+```
+```hcl
+echo "Editing by author of [hotfix]" >> share-file.txt
+```
+```hcl
+git commit -a -m "Commit change by [hotfix]"
+```
+```hcl
+git log --graph --all   # view branch status of all outstanding branches
+```
+```hcl
+git checkout main   # switch back to main branch
+```
+```hcl
+git merge hotfix       # merge hotfix branch to main
+```
+```
 
+PS C:\Users\yec\OneDrive\dev_cloud\vs_code\_common_iot\14-kubernetes\testgit> git merge hotfix
+Updating 8541726..074b542
+Fast-forward
+ share-file.txt | Bin 72 -> 134 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+
+```hcl
+git branch -d hotfix       # delete hotfix branch 
+```
+
+### Now, let's merge that new-branch into main
+
+```hcl
+git branch  # switch back to main, to merge merge new-branch
+```
+```hcl
+echo "test new file" >> test.txt   # add another new file before merge 
+```
+```hcl
 git add test.txt
+```
+```hcl
+git commit -m "add new file"
+```
+```hcl
+git merge new-branch       # merge new-branch
+```
+```
+```hcl
+git push origin main        # might as well?
+```
+```hcl
+git branch -d new-branch
 
-git commit -m "merge conflict resolved"
 
-git push origin master # might as well?
+## End of this Lab
 
 
-## Cloud quickstart
-
-- 6GB unused RAM
-- [**Microsoft Azure Cloud** (`azure`)](./rancher/azure)
-1. Clone or download this repository to a local folder
