@@ -22,7 +22,7 @@ git config --global user.email yec@microsoft.com
 
 If you want to connect local repo to Github, folow the following.
 
-1. Go to github.
+1. Go to [Github](https://github.com/)
 2. Log in to your account.
 3. Click the new repository button in the top-right. You’ll have an option there to initialize the repository with a README file, just ignore it. 
 4. Click the “Create repository” button.
