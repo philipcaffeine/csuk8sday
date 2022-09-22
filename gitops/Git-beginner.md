@@ -35,18 +35,21 @@ mkdir testgit
 ```hcl
 cd testgit
 ```
-#### create initial file 
+
+Create initial file 
 ```hcl
 echo "# Creating testgit" >> README.md  
 ```
 ```hcl
 git init  
 ```
-#### this is the staged of the file
+
+This is the staged of the file
 ```hcl
 git add README.md   
 ```
-#### commit the file into repo  
+
+Commit the file into repo  
 ```hcl
 git commit -m "first commit"   
 ```
@@ -60,7 +63,7 @@ git remote add origin https://github.com/philipcaffeine/testgit.git
 git push -u origin main
 ```
 
-#### View log from current git history
+View log from current git history
 
 ```hcl
 git log
@@ -72,16 +75,15 @@ Date:   Thu Sep 22 14:27:48 2022 +0800
 
 ## Create a new branch 
 
-### Create a new branch 
 
-#### see, we're in main branch now
 ```hcl
 git branch   
 ```
 ```hcl
 git checkout -b new-branch
 ```
-#### check current branch
+
+Check current branch
 ```hcl
 git branch      
 ```
@@ -91,19 +93,20 @@ echo "Editing by author of [new-branch]" >> share-file.txt
 ```hcl
 git commit -a -m "Commit change on a dev new-branch"
 ```
-#### this is the staged of the file
+
+This is the staged of the file
 ```hcl
 git add share-file.txt   
 ```
-#### go back to main
+
+Go back to main
 ```hcl
 git checkout main       
 ```
 
-### Check out another new branch, Hotfix, and merge to main
+Check out another new branch, Hotfix, and merge to main
+Create and checkout another new hotfix branch
 
-
-#### create and checkout another new hotfix branch
 ```hcl
 git checkout -b hotfix  
 ```
@@ -113,15 +116,18 @@ echo "Editing by author of [hotfix]" >> share-file.txt
 ```hcl
 git commit -a -m "Commit change by [hotfix]"
 ```
-#### view branch status of all outstanding branches
+
+View branch status of all outstanding branches
 ```hcl
 git log --graph --all   
 ```
-#### switch back to main branch
+
+Switch back to main branch
 ```hcl
 git checkout main   
 ```
-#### merge hotfix branch to main
+
+Merge hotfix branch to main
 ```hcl
 git merge hotfix       
 ```
@@ -132,18 +138,18 @@ Fast-forward
  share-file.txt | Bin 72 -> 134 bytes
  1 file changed, 0 insertions(+), 0 deletions(-)
 
-#### delete hotfix branch 
+Delete hotfix branch 
 ```hcl
 git branch -d hotfix       
 ```
 
-### Now, let's merge that new-branch into main
-
-#### switch back to main, to merge merge new-branch
+Now, let's merge that new-branch into main
+Switch back to main, to merge merge new-branch
 ```hcl
 git branch  
 ```
-#### add another new file before merge 
+
+Add another new file before merge 
  ```hcl
 echo "test new file" >> test.txt  
 ```
@@ -153,16 +159,17 @@ git add test.txt
 ```hcl
 git commit -m "add new file"
 ```
-#### merge new-branch
+
+Merge new-branch
 ```hcl
 git merge new-branch    
-```
 ```
 ```hcl
 git push origin main       
 ```
 ```hcl
 git branch -d new-branch
+```
 
 
 ## End of this Lab
