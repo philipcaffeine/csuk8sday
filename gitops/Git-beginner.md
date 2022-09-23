@@ -38,7 +38,7 @@ cd testgit
 
 Create initial file 
 ```hcl
-echo "# Creating testgit" >> README.md  
+echo "main file created" > share-file.txt
 ```
 ```hcl
 git init  
@@ -47,7 +47,7 @@ git init
 Before we make a commit, we must tell Git what files we want to commit (new untracked files, modified files, or deleted files). This is called staging and uses the add command. 
 
 ```hcl
-git add README.md   
+git add share-file.txt   
 ```
 
 Commit the file into repo  
@@ -78,9 +78,6 @@ git log
 ## 2. Branch and merge
 
 ```hcl
-git branch   
-```
-```hcl
 git checkout -b iss53
 ```
 
@@ -92,67 +89,25 @@ git branch
 echo "Editing by author of [iss53]" >> share-file.txt
 ```
 ```hcl
-git commit -a -m "Commit change on a dev iss53"
+cat .\share-file.txt  
 ```
 
 This is the staged of the file
 ```hcl
-git add share-file.txt   
+git add share-file.txt
+```
+```hcl
+git commit -m "iss53 editing …"
 ```
 
 Go back to main
 ```hcl
 git checkout main       
 ```
-
-Check out another new branch, Hotfix, and merge to main. Create and checkout another new hotfix branch
-
-```hcl
-git checkout -b hotfix  
-```
-Create a new hotfix share-file.txt
-```hcl
-echo "Editing by author of [hotfix]" > share-file.txt
-```
-```hcl
-git commit -a -m "Commit change by [hotfix]"
-```
-
-View branch status of all outstanding branches
-```hcl
-git log --graph --all   
-```
-
-Switch back to main branch
-```hcl
-git checkout main   
-```
-
-Merge hotfix branch to main
-```hcl
-git merge hotfix       
-```
-
-Delete hotfix branch 
-```hcl
-git branch -d hotfix       
-```
-
 Now, let's merge that iss53 branch into main. Switch back to main, to merge iss53 branch
 
 ```hcl
 git branch  
-```
-
-Also, you can add another new file before merge 
- ```hcl
-echo "test new file" >> test.txt  
-```
-```hcl
-git add test.txt
-```
-```hcl
-git commit -m "add new file"
 ```
 
 Merge iss53 branch 
@@ -165,8 +120,6 @@ git push origin main
 ```hcl
 git branch -d iss53
 ```
-
-
 ## End of this Lab
 
 
