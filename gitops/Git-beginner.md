@@ -63,7 +63,7 @@ git branch -M main
 Working with remote, details ref: [Git work with remote](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes)
 
 ```hcl
-git remote add origin https://github.com/philipcaffeine/testgit.git
+git remote add origin https://github.com/your_account/testgit.git
 ```
 ```hcl
 git push -u origin main
